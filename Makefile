@@ -3,3 +3,6 @@ install:
 
 server:
 	yarn server
+
+test:
+	yarn test

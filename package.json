@@ -5,7 +5,8 @@
   "main": "/src/app.js",
   "scripts": {
     "start": "node --require 'babel-register' src/app.js",
-    "server": "node --require 'babel-register' src/server.js"
+    "server": "node --require 'babel-register' src/server.js",
+    "test": "jest"
   },
   "author": "Juan Contreras <jcontrerasmeneses@gmail.com>",
   "license": "MIT",
