@@ -1,7 +1,8 @@
 import express from 'express';
 import parser from 'body-parser';
 import axios from 'axios';
-import { users } from './services';
+import { users, posts } from './services';
+import { authenticate } from './middlewares';
 
 const app = express();
 
@@ -16,10 +17,17 @@ app.use(parser.json())
  */
 const usersHandlers = users(axios);
 
-app.get('/', usersHandlers.GET);
-app.post('/', usersHandlers.POST);
-app.put('/:id', usersHandlers.PUT);
-app.delete('/:id', usersHandlers.DELETE);
+app.get('/users', usersHandlers.GET);
+app.post('/users', usersHandlers.POST);
+app.put('/users/:id', usersHandlers.PUT);
+app.delete('/users/:id', usersHandlers.DELETE);
+
+/**
+ * Post routes
+ */
+const portsHandlers = ports(axios);
+
+app.post('/post', authenticate, portsHandlers.POST);
 
 /**
  * Other routes

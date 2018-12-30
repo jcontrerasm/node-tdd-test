@@ -23,9 +23,9 @@ describe('Test services Users', () => {
       }
       await users(axiosMock).GET(requestMock, responseMock);
       const urlGet = `${BASE_URL}/users`;
-      expect(axiosMock.get.mock.calls[0]).toEqual([urlGet]);
-      expect(responseMock.status.mock.calls[0]).toEqual([200]);
-      expect(responseMock.send.mock.calls[0]).toEqual([{}]);
+      expect(axiosMock.get).toBeCalledWith(urlGet);
+      expect(responseMock.status).toBeCalledWith(200);
+      expect(responseMock.send).toBeCalledWith({});
     });
   });
 
@@ -40,9 +40,9 @@ describe('Test services Users', () => {
       }
       await users(axiosMock).POST(requestMock, responseMock);
       const urlPost = `${BASE_URL}/users`;
-      expect(axiosMock.post.mock.calls[0]).toEqual([urlPost, {}]);
-      expect(responseMock.status.mock.calls[0]).toEqual([201]);
-      expect(responseMock.send.mock.calls[0]).toEqual([{}]);
+      expect(axiosMock.post).toBeCalledWith(urlPost, {});
+      expect(responseMock.status).toBeCalledWith(201);
+      expect(responseMock.send).toBeCalledWith({});
     });
   });
 
@@ -59,8 +59,8 @@ describe('Test services Users', () => {
       }
       await users(axiosMock).PUT(requestMock, responseMock);
       const urlPut = `${BASE_URL}/users/1315`;
-      expect(axiosMock.put.mock.calls[0]).toEqual([urlPut, {}]);
-      expect(responseMock.sendStatus.mock.calls[0]).toEqual([204]);
+      expect(axiosMock.put).toBeCalledWith(urlPut, {});
+      expect(responseMock.sendStatus).toBeCalledWith(204);
     });
   });
 
@@ -77,8 +77,8 @@ describe('Test services Users', () => {
       }
       await users(axiosMock).DELETE(requestMock, responseMock);
       const urlDelete = `${BASE_URL}/users/1315`;
-      expect(axiosMock.delete.mock.calls[0]).toEqual([urlDelete]);
-      expect(responseMock.sendStatus.mock.calls[0]).toEqual([204]);
+      expect(axiosMock.delete).toBeCalledWith(urlDelete);
+      expect(responseMock.sendStatus).toBeCalledWith(204);
     });
   });
 
