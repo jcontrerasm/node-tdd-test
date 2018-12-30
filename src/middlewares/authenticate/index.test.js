@@ -1,18 +1,25 @@
-import { authenticate } from './index';
+import authenticate from './index';
 
 describe('Test middleware authenticate', () => {
 
+  let responserMock;
+  let next;
+
   beforeAll(() => {
+    responserMock = {
+      sendStatus: jest.fn()
+    }
+    next = jest.fn();
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   test('Should have id 1', () => {
     const requestMock = {
-      header: jest.fn().mockReturnValue(1)
+      header: jest.fn().mockReturnValue('1')
     }
-    const responserMock = {
-      sendStatus: jest.fn()
-    }
-    const next = jest.fn();
     authenticate(requestMock, responserMock, next);
     expect(requestMock.header).toBeCalled();
     expect(requestMock.header).toBeCalledWith('user_id');
@@ -22,12 +29,8 @@ describe('Test middleware authenticate', () => {
 
   test('Should fail if user is not the one with id 1', () => {
     const requestMock = {
-      header: jest.fn().mockReturnValue(2)
+      header: jest.fn().mockReturnValue('2')
     }
-    const responserMock = {
-      sendStatus: jest.fn()
-    }
-    const next = jest.fn();
     authenticate(requestMock, responserMock, next);
     expect(requestMock.header).toBeCalled();
     expect(requestMock.header).toBeCalledWith('user_id');
