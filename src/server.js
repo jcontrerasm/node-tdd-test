@@ -25,9 +25,9 @@ app.delete('/users/:id', usersHandlers.DELETE);
 /**
  * Post routes
  */
-const portsHandlers = ports(axios);
+const postsHandlers = posts(axios);
 
-app.post('/post', authenticate, portsHandlers.POST);
+app.post('/posts', authenticate, postsHandlers.POST);
 
 /**
  * Other routes

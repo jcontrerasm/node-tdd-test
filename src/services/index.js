@@ -1,9 +1,12 @@
 import handlersUsers from './users';
+import handlersPosts from './posts';
 
 const handlersCollection = {
-  users: handlersUsers
+  users: handlersUsers,
+  posts: handlersPosts
 };
 
 export const {
-  users
+  users,
+  posts
 } = handlersCollection;

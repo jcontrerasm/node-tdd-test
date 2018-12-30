@@ -1,6 +1,6 @@
-export const authenticate = (request, response, next) => {
+export default (request, response, next) => {
   const userId = request.header('user_id');
-  if(userId !== 1) {
+  if(userId !== '1') {
     return response.sendStatus(403);
   }
   next();

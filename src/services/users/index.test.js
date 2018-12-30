@@ -14,8 +14,12 @@ describe('Test services Users', () => {
     };
   });
 
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   describe('Method GET', () => {
-    test('return to user json', async () => {
+    test('Should get users', async () => {
       const requestMock = {};
       const responseMock = {
         status: jest.fn().mockReturnThis(),
@@ -30,7 +34,7 @@ describe('Test services Users', () => {
   });
 
   describe('Method POST', () => {
-    test('return to user json', async () => {
+    test('Should create user', async () => {
       const requestMock = {
         body: {}
       };
@@ -47,7 +51,7 @@ describe('Test services Users', () => {
   });
 
   describe('Method PUT', () => {
-    test('return to user json', async () => {
+    test('Should update information user', async () => {
       const requestMock = {
         body: {},
         params: {
@@ -65,7 +69,7 @@ describe('Test services Users', () => {
   });
 
   describe('Method DELETE', () => {
-    test('return to user json', async () => {
+    test('Should delete user', async () => {
       const requestMock = {
         body: {},
         params: {
