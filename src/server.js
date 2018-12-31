@@ -1,6 +1,6 @@
 import express from 'express';
 import parser from 'body-parser';
-import axios from 'axios';
+import { axios } from './libraries';
 import { users, posts } from './services';
 import { authenticate } from './middlewares';
 

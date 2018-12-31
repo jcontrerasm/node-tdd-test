@@ -1,6 +1,6 @@
 import authenticate from './index';
 
-describe('Test middleware authenticate', () => {
+describe('Unit test middleware authenticate', () => {
 
   let responserMock;
   let next;

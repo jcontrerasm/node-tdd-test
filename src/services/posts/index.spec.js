@@ -1,8 +1,7 @@
 import request from 'supertest';
 import { app } from '../../server';
 
-
-describe('Integration Test services Posts', () => {
+describe('Integration test services Posts', () => {
   describe('Method POST', () => {
     test('Should create a new post', async () => {
       const response = await request(app)

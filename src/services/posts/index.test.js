@@ -1,6 +1,6 @@
 import posts from './index';
 
-describe('Unit Test services Posts', () => {
+describe('Unit test services Posts', () => {
 
   let axiosMock = {};
   const BASE_URL = 'https://jsonplaceholder.typicode.com';
