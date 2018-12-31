@@ -1,6 +1,6 @@
 import users from './index';
 
-describe('Test services Users', () => {
+describe('Unit test services Users', () => {
 
   let axiosMock = {};
   const BASE_URL = 'https://jsonplaceholder.typicode.com';
