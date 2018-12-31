@@ -4,7 +4,7 @@ import axios from 'axios';
 import { users, posts } from './services';
 import { authenticate } from './middlewares';
 
-const app = express();
+export const app = express();
 
 // parse application/x-www-form-urlencoded
 app.use(parser.urlencoded({ extended: false }));
@@ -33,6 +33,6 @@ app.post('/posts', authenticate, postsHandlers.POST);
  * Other routes
  */
 
-app.listen(3000, function () {
+app.listen(3000, () => {
   console.log('Application listening on port 3000');
 });
